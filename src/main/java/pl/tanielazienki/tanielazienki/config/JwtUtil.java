@@ -47,7 +47,7 @@ public class JwtUtil {
                 authorities.stream()
                         .map(authority -> authority.getAuthority().replace("ROLE_", ""))
                         .toList();
-
+        System.out.println("principal: " + ((User) authResult.getPrincipal()).getUsername());
         return JWT.create()
                 .withSubject(((User) authResult.getPrincipal()).getUsername())
                 .withIssuer("tutorial-backend")

@@ -56,4 +56,10 @@ public class TestController {
     public ResponseEntity<String> securedForAdmin() {
         return new ResponseEntity<>("{\"msg\":\"Hello admin\"}", HttpStatus.OK);
     }
+
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @PostMapping(value = "/category", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> category(@RequestBody String category) {
+        return new ResponseEntity<>("{\"ok\":\"ds\"}", HttpStatus.OK);
+    }
 }
