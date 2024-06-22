@@ -2,6 +2,7 @@ package pl.tanielazienki.tanielazienki.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -12,6 +13,12 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
+import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
@@ -38,8 +45,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
-        final UserAuthenticationFilter userAuthenticationFilter =
-                new UserAuthenticationFilter(jwtUtil, daoAuthenticationProvider());
+        final UserAuthenticationFilter userAuthenticationFilter = new UserAuthenticationFilter(jwtUtil, daoAuthenticationProvider());
         userAuthenticationFilter.setFilterProcessesUrl("/api/v1/login");
 
         http.cors(Customizer.withDefaults())
@@ -49,12 +55,32 @@ public class SecurityConfig {
                         a ->
                                 a.requestMatchers("/api/v1/login", "/api/v1/register", "/api/v1/unsecured")
                                         .permitAll()
+                                        .requestMatchers("/**").permitAll()
                                         .anyRequest()
                                         .authenticated())
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
+        configuration.setExposedHeaders(Arrays.asList("auth-token", "Content-Length", "Expires"));
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+
+
+    @Bean
+    public org.springframework.web.filter.CorsFilter corsFilter() {
+        return new CorsFilter(corsConfigurationSource());
+    }
+
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {

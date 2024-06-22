@@ -29,7 +29,7 @@ public class MyUserDetailsService implements UserDetailsService {
         Optional<UserEntity> userEntityOptional = userRepository.findByUsername(username);
 
         if (userEntityOptional.isEmpty()) {
-            throw new UsernameNotFoundException("Benutzer konnte nicht gefunden werden");
+            throw new UsernameNotFoundException("User o tym usernamie nie istnieje");
         }
 
         UserEntity user = userEntityOptional.get();

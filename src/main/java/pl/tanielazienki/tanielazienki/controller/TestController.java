@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.*;
 import pl.tanielazienki.tanielazienki.user.UserRegistrationDTO;
 import pl.tanielazienki.tanielazienki.user.UserService;
 
+
+@CrossOrigin("*")
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1")
 public class TestController {
 
     private final UserService userService;
@@ -24,6 +26,15 @@ public class TestController {
         userService.register(userRegisterationDto);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> login(@RequestBody UserRegistrationDTO userRegisterationDto) {
+        System.out.println("xxx");
+        userService.register(userRegisterationDto);
+        return ResponseEntity.ok().build();
+    }
+
+
 
     @GetMapping(value = "/unsecured", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> unsecured() {
@@ -40,7 +51,7 @@ public class TestController {
         return new ResponseEntity<>("{\"msg\":\"Hello secure World\"}", HttpStatus.OK);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('USER')")
     @GetMapping(value = "/secured-admin", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> securedForAdmin() {
         return new ResponseEntity<>("{\"msg\":\"Hello admin\"}", HttpStatus.OK);

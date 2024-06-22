@@ -8,6 +8,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.io.BufferedReader;
@@ -39,9 +40,7 @@ public class UserAuthenticationFilter extends UsernamePasswordAuthenticationFilt
             throw new RuntimeException();
         }
 
-        return daoAuthenticationProvider.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        userLoginModel.getUsername(), userLoginModel.getPassword()));
+        return daoAuthenticationProvider.authenticate(new UsernamePasswordAuthenticationToken(userLoginModel.getUsername(), userLoginModel.getPassword()));
     }
 
     @Override
@@ -51,6 +50,8 @@ public class UserAuthenticationFilter extends UsernamePasswordAuthenticationFilt
             final FilterChain chain,
             final Authentication authResult) {
         final String token = jwtUtil.createToken(authResult);
+
+        System.out.println("TOKEN: " + token);
 
         response.setHeader("auth-token", token);
     }
