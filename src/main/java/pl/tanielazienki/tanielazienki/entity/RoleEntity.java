@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.user;
+package pl.tanielazienki.tanielazienki.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pl.tanielazienki.tanielazienki.user.UserEntity;
-import pl.tanielazienki.tanielazienki.user.UserRepository;
+import pl.tanielazienki.tanielazienki.entity.UserEntity;
+import pl.tanielazienki.tanielazienki.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;

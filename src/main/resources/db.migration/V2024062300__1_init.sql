@@ -18,3 +18,8 @@ CREATE TABLE IF NOT EXISTS `user_role` (
                                            FOREIGN KEY (`user_id`) REFERENCES `User`(`id`),
                                            FOREIGN KEY (`role_id`) REFERENCES `Role`(`id`)
 );
+
+CREATE TABLE IF NOT EXISTS `category` (
+                          `id` INT AUTO_INCREMENT PRIMARY KEY,
+                          `category` VARCHAR(255) UNIQUE NOT NULL
+);

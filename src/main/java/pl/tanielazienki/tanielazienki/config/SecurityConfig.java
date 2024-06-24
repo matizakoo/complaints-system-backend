@@ -48,12 +48,18 @@ public class SecurityConfig {
         final UserAuthenticationFilter userAuthenticationFilter = new UserAuthenticationFilter(jwtUtil, daoAuthenticationProvider());
         userAuthenticationFilter.setFilterProcessesUrl("/api/v1/login");
 
-        http.cors(Customizer.withDefaults())
+        http.cors(cors -> cors.configurationSource(request -> {
+                    CorsConfiguration configuration = new CorsConfiguration();
+                    configuration.setAllowedOrigins(Arrays.asList("*"));
+                    configuration.setAllowedMethods(Arrays.asList("*"));
+                    configuration.setAllowedHeaders(Arrays.asList("*"));
+                    return configuration;
+                }))
                 .csrf(AbstractHttpConfigurer::disable)
                 .addFilter(userAuthenticationFilter)
                 .authorizeHttpRequests(
                         a ->
-                                a.requestMatchers("/api/v1/login", "/api/v1/register", "/api/v1/unsecured")
+                                a.requestMatchers("/api/v1/login", "/api/v1/register", "/api/v1/unsecured", "/category")
                                         .permitAll()
                                         .requestMatchers("/**").permitAll()
                                         .anyRequest()

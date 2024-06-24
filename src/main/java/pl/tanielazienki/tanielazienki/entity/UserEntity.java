@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.user;
+package pl.tanielazienki.tanielazienki.entity;
 
 import jakarta.persistence.*;
 
@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class UserEntity {
     @Id
     @GeneratedValue
