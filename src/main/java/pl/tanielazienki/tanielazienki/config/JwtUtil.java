@@ -12,10 +12,9 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.time.Instant;
-import java.util.Base64;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.*;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -53,6 +52,7 @@ public class JwtUtil {
                 .withIssuer("tutorial-backend")
                 .withExpiresAt(new Date(new Date().getTime() + 1000000))
                 .withIssuedAt(new Date())
+//                .withClaim("date", LocalDate.now().toString())
                 .withClaim("roles", roles)
                 .sign(algorithm);
     }

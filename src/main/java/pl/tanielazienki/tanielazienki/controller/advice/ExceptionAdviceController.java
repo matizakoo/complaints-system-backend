@@ -10,6 +10,7 @@ import pl.tanielazienki.tanielazienki.controller.CategoryController;
 import pl.tanielazienki.tanielazienki.controller.advice.ResponseHelper;
 import pl.tanielazienki.tanielazienki.dto.InfoDTO;
 import pl.tanielazienki.tanielazienki.exception.CategoryException;
+import pl.tanielazienki.tanielazienki.exception.ContractorException;
 
 @ControllerAdvice
 public class ExceptionAdviceController {
@@ -18,4 +19,11 @@ public class ExceptionAdviceController {
         return ResponseEntity.ok(new InfoDTO("dsa"));
 //        return ResponseHelper.response400(e.getMessage());
     }
+
+    @ExceptionHandler
+    public ResponseEntity<InfoDTO> handleContractorException(ContractorException e) {
+        return ResponseHelper.response400(e.getMessage());
+    }
+
+
 }

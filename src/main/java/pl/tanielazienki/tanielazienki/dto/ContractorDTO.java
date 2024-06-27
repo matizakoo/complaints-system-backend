@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProviderDTO {
+public class ContractorDTO {
     private Integer id;
-    private String nameOfProvider;
+    private String contractorName;
 }
