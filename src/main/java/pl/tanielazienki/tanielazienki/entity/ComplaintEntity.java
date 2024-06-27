@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,12 +24,19 @@ public class ComplaintEntity {
     @ManyToOne
     @JoinColumn(name = "provider_id", nullable = false)
     private ProviderEntity providerEntity;
+    @ManyToOne
+    @JoinColumn(name = "contractor_id", nullable = false)
+    private ContractorEntity contractorEntity;
     private LocalDate dateOfPurchase;
+    private String factureId;
+
     //client info
     private String username;
     private String surname;
     private String phoneNumber;
-    private String clientAddress;
-    private String post;
-    private String zipCode;
+    private String email;
+
+    @OneToMany(mappedBy = "complaintEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("dateTime DESC")
+    private List<NoteEntity> notes = new ArrayList<>();
 }
