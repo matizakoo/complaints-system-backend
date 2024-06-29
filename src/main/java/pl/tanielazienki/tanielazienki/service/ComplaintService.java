@@ -12,4 +12,5 @@ public interface ComplaintService {
     void save(ComplaintEntity complaintEntity) ;
     void create(String category);
     List<ComplaintDTO> getAll();
+    ComplaintEntity findById(Integer id);
 }

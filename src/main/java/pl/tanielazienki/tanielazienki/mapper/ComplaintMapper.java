@@ -10,6 +10,5 @@ import java.util.List;
 public interface ComplaintMapper {
     ComplaintEntity mapComplaintDTOToComplaintEntity(ComplaintDTO complaintDTO);
     ComplaintDTO mapComplaintEntityToComplaintDTO(ComplaintEntity complaintEntity);
-    List<ComplaintDTO> mapComplaintEntityListToComplaintDTOList(List<ComplaintEntity> complaintEntityList);
-    List<ComplaintEntity> mapComplaintDTOListToComplaintEntityList(List<ComplaintDTO> complaintDTOList);
+    List<ComplaintDTO> mapComplaintEntityToComplaintDTOList(List<ComplaintEntity> complaintEntityList);
 }
