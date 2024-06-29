@@ -25,8 +25,12 @@ public class ComplaintEntity {
     @JoinColumn(name = "provider_id", nullable = false)
     private ProviderEntity providerEntity;
     @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private CategoryEntity categoryEntity;
+    @ManyToOne
     @JoinColumn(name = "contractor_id", nullable = false)
     private ContractorEntity contractorEntity;
+
     private LocalDate dateOfPurchase;
     private String factureId;
 
@@ -35,6 +39,7 @@ public class ComplaintEntity {
     private String surname;
     private String phoneNumber;
     private String email;
+    private String status;
 
     @OneToMany(mappedBy = "complaintEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("dateTime DESC")

@@ -3,8 +3,6 @@ package pl.tanielazienki.tanielazienki.service;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.tanielazienki.tanielazienki.dto.ContractorDTO;
-import pl.tanielazienki.tanielazienki.entity.CategoryEntity;
 import pl.tanielazienki.tanielazienki.entity.ContractorEntity;
 import pl.tanielazienki.tanielazienki.exception.ContractorException;
 import pl.tanielazienki.tanielazienki.mapper.ContractorMapper;
@@ -25,7 +23,7 @@ public class ContractorServiceImpl implements ContractorService{
     }
 
     @Override
-    public void update(ContractorDTO contractorDTO) {
+    public void update(pl.tanielazienki.tanielazienki.dto.ContractorDTO contractorDTO) {
         ContractorEntity contractorEntity = null;
         contractorEntity = contractorRepository.findById(contractorDTO.getId()).get();
 
@@ -34,7 +32,7 @@ public class ContractorServiceImpl implements ContractorService{
     }
 
     @Override
-    public void save(ContractorDTO contractorDTO) {
+    public void save(pl.tanielazienki.tanielazienki.dto.ContractorDTO contractorDTO) {
 
     }
 
@@ -53,7 +51,7 @@ public class ContractorServiceImpl implements ContractorService{
     }
 
     @Override
-    public List<ContractorDTO> getAll() {
+    public List<pl.tanielazienki.tanielazienki.dto.ContractorDTO> getAll() {
         return contractorMapper.mapContractorEntityToContractorDTOList(contractorRepository.findAll());
     }
 }

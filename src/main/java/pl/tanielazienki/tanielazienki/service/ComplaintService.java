@@ -1,9 +1,7 @@
 package pl.tanielazienki.tanielazienki.service;
 
 import pl.tanielazienki.tanielazienki.dto.ComplaintDTO;
-import pl.tanielazienki.tanielazienki.dto.ProviderDTO;
 import pl.tanielazienki.tanielazienki.entity.ComplaintEntity;
-import pl.tanielazienki.tanielazienki.entity.ProviderEntity;
 
 import java.util.List;
 

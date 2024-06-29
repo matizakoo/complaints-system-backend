@@ -2,9 +2,6 @@ package pl.tanielazienki.tanielazienki.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.enterprise.inject.spi.Interceptor;
 
 @Entity
 @Table(name = "contractor")

@@ -2,7 +2,6 @@ package pl.tanielazienki.tanielazienki.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.tanielazienki.tanielazienki.entity.CategoryEntity;
 import pl.tanielazienki.tanielazienki.entity.ProviderEntity;
 
 @Repository
