@@ -22,7 +22,6 @@ public class TestController {
 
     @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> register(@RequestBody UserRegistrationDTO userRegisterationDto) {
-        System.out.println("xxx");
         userService.register(userRegisterationDto);
         return ResponseEntity.ok().build();
     }

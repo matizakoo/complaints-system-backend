@@ -1,5 +1,6 @@
 package pl.tanielazienki.tanielazienki.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,6 +29,7 @@ public class ComplaintEntity {
     @JoinColumn(name = "category_id", nullable = false)
     private CategoryEntity categoryEntity;
     @ManyToOne
+    @JsonManagedReference
     @JoinColumn(name = "contractor_id", nullable = false)
     private ContractorEntity contractorEntity;
 

@@ -44,7 +44,6 @@ public class ContractorControllerImpl implements ContractorController {
     @Override
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ContractorDTO>> getContractors() {
-        System.out.println(contractorService.getAll());
         return ResponseEntity.ok(contractorService.getAll());
     }
 

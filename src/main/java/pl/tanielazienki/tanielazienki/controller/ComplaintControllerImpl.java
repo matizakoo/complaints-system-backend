@@ -1,20 +1,20 @@
 package pl.tanielazienki.tanielazienki.controller;
 
-import io.swagger.v3.oas.annotations.security.OAuthFlow;
+import freemarker.core._ArrayEnumeration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.HttpSessionRequiredException;
 import org.springframework.web.bind.annotation.*;
 import pl.tanielazienki.tanielazienki.dto.ComplaintDTO;
+import pl.tanielazienki.tanielazienki.dto.NoteDTO;
 import pl.tanielazienki.tanielazienki.entity.ComplaintEntity;
+import pl.tanielazienki.tanielazienki.entity.NoteEntity;
 import pl.tanielazienki.tanielazienki.mapper.ComplaintMapper;
-import pl.tanielazienki.tanielazienki.repository.ComplaintRepository;
-import pl.tanielazienki.tanielazienki.service.ComplaintService;
 import pl.tanielazienki.tanielazienki.service.ComplaintServiceImpl;
+import pl.tanielazienki.tanielazienki.service.NoteServiceImpl;
 
-import javax.faces.annotation.RequestMap;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -23,7 +23,7 @@ public class ComplaintControllerImpl implements ComplaintController{
     @Autowired
     private ComplaintServiceImpl complaintService;
     @Autowired
-    private ComplaintRepository complaintRepository;
+    private NoteServiceImpl noteService;
     @Autowired
     private ComplaintMapper complaintMapper;
 
@@ -49,9 +49,9 @@ public class ComplaintControllerImpl implements ComplaintController{
 
     @Override
     @PatchMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> updateComplaintStatus(@RequestParam("id") Integer id,
-                                                   @RequestParam("status") String status) {
-        ComplaintEntity complaintEntity = complaintService.findById(id);
+    public ResponseEntity<?> patchComplaintStatus(@RequestParam("id") String id,
+                                                  @RequestParam("status") String status) {
+        ComplaintEntity complaintEntity = complaintService.findById(Integer.valueOf(id));
         complaintEntity.setStatus(status);
         complaintService.save(complaintEntity);
         return ResponseEntity.ok(HttpStatus.OK);
@@ -66,5 +66,22 @@ public class ComplaintControllerImpl implements ComplaintController{
     @Override
     public ResponseEntity<?> patchComplaint(ComplaintDTO complaintDTO, Integer id) {
         return null;
+    }
+
+    @Override
+    @PostMapping(value = "/note")
+    public ResponseEntity<?> addNote(
+            @RequestParam("id") String id,
+            @RequestParam("noteContent") String noteContent,
+            @RequestParam("principal") String principal
+            ) {
+        NoteEntity noteEntity = NoteEntity.builder()
+                .publisher(principal)
+                .dateTime(LocalDateTime.now())
+                .note(noteContent)
+                .complaintEntity(complaintService.findById(Integer.valueOf(id)))
+                        .build();
+        noteService.createNoteEntity(noteEntity);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 }

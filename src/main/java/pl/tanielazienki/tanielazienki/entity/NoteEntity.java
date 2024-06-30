@@ -1,5 +1,6 @@
 package pl.tanielazienki.tanielazienki.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 @Table(name = "note")
 public class NoteEntity {
     @Id
@@ -21,6 +23,7 @@ public class NoteEntity {
     private String publisher;
     private LocalDateTime dateTime;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "complaint_id", nullable = false)
     private ComplaintEntity complaintEntity;

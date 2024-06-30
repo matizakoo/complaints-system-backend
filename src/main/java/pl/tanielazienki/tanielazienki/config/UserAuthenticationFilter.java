@@ -51,8 +51,6 @@ public class UserAuthenticationFilter extends UsernamePasswordAuthenticationFilt
             final Authentication authResult) {
         final String token = jwtUtil.createToken(authResult);
 
-        System.out.println("TOKEN: " + token);
-
         response.setHeader("auth-token", token);
     }
 }

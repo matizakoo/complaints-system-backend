@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class NoteDTO {
     private Integer id;
+    private ComplaintDTO complaintDTO;
     private String note;
     private String publisher;
     private LocalDateTime dateTime;

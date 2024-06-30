@@ -52,7 +52,6 @@ public class ProviderControllerImpl implements ProviderController {
     @Override
     @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> deleteProvider(@RequestBody String categoryId) {
-        System.out.println("kat: " + categoryId);
         providerService.remove(Integer.valueOf(categoryId));
         return ResponseEntity.ok().body("");
     }
