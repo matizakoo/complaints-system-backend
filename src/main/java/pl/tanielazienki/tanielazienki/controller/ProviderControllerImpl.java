@@ -42,6 +42,12 @@ public class ProviderControllerImpl implements ProviderController {
     }
 
     @Override
+    @GetMapping("/commonProvider")
+    public ResponseEntity<String> commonProvider() {
+        return ResponseEntity.ok(providerService.commonProvider());
+    }
+
+    @Override
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ProviderDTO>> getProvider() {
         return ResponseEntity.of(Optional.ofNullable(providerService.getAll()));

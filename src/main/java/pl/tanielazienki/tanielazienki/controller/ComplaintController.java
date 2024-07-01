@@ -19,4 +19,9 @@ public interface ComplaintController {
     ResponseEntity<?> addNote(@RequestParam("id") String id,
                               @RequestParam("status") String status,
                               @RequestParam("principal") String principal);
+
+    ResponseEntity<?> amountOfAllComplaintsInYear();
+    ResponseEntity<?> amountOfComplaintsThisWeek();
+    ResponseEntity<?> getDataForComplaintsChart();
+    ResponseEntity<?> getExpiresInTwoDays();
 }

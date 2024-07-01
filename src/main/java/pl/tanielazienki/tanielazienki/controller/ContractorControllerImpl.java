@@ -54,4 +54,11 @@ public class ContractorControllerImpl implements ContractorController {
         contractorService.update(contractorDTO);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    @GetMapping("/commonContractor")
+    public ResponseEntity<String> commonContractor() {
+        System.out.println(contractorService.commonContractor());
+        return ResponseEntity.ok(contractorService.commonContractor());
+    }
 }

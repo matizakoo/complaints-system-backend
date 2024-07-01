@@ -16,4 +16,5 @@ public interface ProviderService {
     List<pl.tanielazienki.tanielazienki.dto.ProviderDTO> getAll();
 
     ProviderEntity findByNameOfProvider(String category);
+    String commonProvider();
 }

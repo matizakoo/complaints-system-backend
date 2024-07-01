@@ -1,5 +1,6 @@
 package pl.tanielazienki.tanielazienki.service;
 
+import pl.tanielazienki.tanielazienki.dto.ComplaintDTO;
 import pl.tanielazienki.tanielazienki.entity.ContractorEntity;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface ContractorService {
     void save(ContractorEntity CcntractorEntity) ;
     void create(String category);
     List<pl.tanielazienki.tanielazienki.dto.ContractorDTO> getAll();
+    String commonContractor();
 }

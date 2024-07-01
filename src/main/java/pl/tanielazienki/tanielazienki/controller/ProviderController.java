@@ -15,5 +15,5 @@ public interface ProviderController {
     ResponseEntity<?> updateProvider();
     ResponseEntity<List<ProviderDTO>> getProvider();
     ResponseEntity<?> patchProvider(@RequestBody ProviderDTO providerDTO, @RequestParam("newCategoryName") String newProviderName);
-
+    ResponseEntity<?> commonProvider();
 }

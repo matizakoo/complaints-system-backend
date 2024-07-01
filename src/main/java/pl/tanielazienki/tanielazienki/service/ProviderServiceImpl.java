@@ -67,4 +67,14 @@ public class ProviderServiceImpl implements ProviderService{
     public ProviderEntity findByNameOfProvider(String category) {
         return providerRepository.findByNameOfProvider(category);
     }
+
+    @Override
+    public String commonProvider() {
+        List<String> commonProvider = providerRepository.commonProvider();
+        if (!commonProvider.isEmpty()) {
+            return commonProvider.get(0);
+        } else {
+            return null;
+        }
+    }
 }

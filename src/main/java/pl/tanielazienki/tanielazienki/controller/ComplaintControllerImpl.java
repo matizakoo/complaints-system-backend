@@ -12,8 +12,11 @@ import pl.tanielazienki.tanielazienki.entity.ComplaintEntity;
 import pl.tanielazienki.tanielazienki.entity.NoteEntity;
 import pl.tanielazienki.tanielazienki.mapper.ComplaintMapper;
 import pl.tanielazienki.tanielazienki.service.ComplaintServiceImpl;
+import pl.tanielazienki.tanielazienki.service.EmailService;
 import pl.tanielazienki.tanielazienki.service.NoteServiceImpl;
 
+import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -24,8 +27,6 @@ public class ComplaintControllerImpl implements ComplaintController{
     private ComplaintServiceImpl complaintService;
     @Autowired
     private NoteServiceImpl noteService;
-    @Autowired
-    private ComplaintMapper complaintMapper;
 
     @Override
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -83,5 +84,38 @@ public class ComplaintControllerImpl implements ComplaintController{
                         .build();
         noteService.createNoteEntity(noteEntity);
         return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    @Override
+    @GetMapping("/amountOfReports")
+    public ResponseEntity<?> amountOfAllComplaintsInYear() {
+        return ResponseEntity.ok(complaintService.amountOfComplaintsInYear(String.valueOf(LocalDate.now().getYear())));
+    }
+
+    @Override
+    @GetMapping("/amountOfComplaintsThisWeek")
+    public ResponseEntity<?> amountOfComplaintsThisWeek() {
+        return ResponseEntity.ok(complaintService.amountOfComplaintsThisWeek());
+    }
+
+    @Override
+    @GetMapping("/complaintsChart")
+    public ResponseEntity<?> getDataForComplaintsChart() {
+        return ResponseEntity.ok(complaintService.getAmountOfComplaintsByMonth());
+    }
+
+    @Override
+    @GetMapping("/expiresInTwoDays")
+    public ResponseEntity<?> getExpiresInTwoDays() {
+        return ResponseEntity.ok(complaintService.complaintsExpiresInTwoDays());
+    }
+
+    @Autowired
+    private EmailService emailService;
+
+    @GetMapping("/send")
+    public void send() throws IOException {
+        System.out.println("xxx");
+        emailService.sendSimpleEmail("matzakoo@gmail.com", "zgloszenia", "hihih");
     }
 }

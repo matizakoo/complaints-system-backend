@@ -14,4 +14,5 @@ public interface ContractorController {
     ResponseEntity<?> updateContractor();
     ResponseEntity<List<ContractorDTO>> getContractors();
     ResponseEntity<?> patchContractor(@RequestBody ContractorDTO contractorDTO, @RequestBody String newContractorName);
+    ResponseEntity<String> commonContractor();
 }
