@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.entity;
+package pl.engineer.active.substances.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

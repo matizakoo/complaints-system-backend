@@ -1,7 +1,7 @@
-package pl.tanielazienki.tanielazienki.service;
+package pl.engineer.active.substances.service;
 
-import pl.tanielazienki.tanielazienki.dto.NoteDTO;
-import pl.tanielazienki.tanielazienki.entity.NoteEntity;
+import pl.engineer.active.substances.dto.NoteDTO;
+import pl.engineer.active.substances.entity.NoteEntity;
 
 public interface NoteService {
     void createNote(NoteDTO noteDTO);

@@ -1,11 +1,12 @@
-package pl.tanielazienki.tanielazienki.service;
+package pl.engineer.active.substances.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.tanielazienki.tanielazienki.entity.CategoryEntity;
-import pl.tanielazienki.tanielazienki.exception.CategoryException;
-import pl.tanielazienki.tanielazienki.repository.CategoryRepository;
+import pl.engineer.active.substances.dto.CategoryDTO;
+import pl.engineer.active.substances.entity.CategoryEntity;
+import pl.engineer.active.substances.exception.CategoryException;
+import pl.engineer.active.substances.repository.CategoryRepository;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -24,7 +25,7 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     @Transactional
-    public void update(pl.tanielazienki.tanielazienki.dto.CategoryDTO categoryDTO) {
+    public void update(CategoryDTO categoryDTO) {
         CategoryEntity categoryEntity = null;
         categoryEntity = categoryRepository.findById(categoryDTO.getId()).get();
 
@@ -34,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     @Transactional
-    public void save(pl.tanielazienki.tanielazienki.dto.CategoryDTO categoryDTO) {
+    public void save(CategoryDTO categoryDTO) {
         CategoryEntity categoryEntity = categoryRepository.findById(categoryDTO.getId()).get();
         CategoryEntity categoryEntity2 = new CategoryEntity(categoryEntity.getId(), categoryDTO.getCategory());
         categoryRepository.save(categoryEntity2);
@@ -58,13 +59,13 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public List<pl.tanielazienki.tanielazienki.dto.CategoryDTO> getAll() {
+    public List<CategoryDTO> getAll() {
         List<CategoryEntity> categoryEntityList = categoryRepository.findAll();
-        List<pl.tanielazienki.tanielazienki.dto.CategoryDTO> categoryDTOList = new ArrayList<>();
+        List<CategoryDTO> categoryDTOList = new ArrayList<>();
         for(CategoryEntity entity: categoryEntityList) {
-            categoryDTOList.add(new pl.tanielazienki.tanielazienki.dto.CategoryDTO(entity.getId(), entity.getCategory()));
+            categoryDTOList.add(new CategoryDTO(entity.getId(), entity.getCategory()));
         }
-        categoryDTOList.sort(Comparator.comparing(pl.tanielazienki.tanielazienki.dto.CategoryDTO::getId));
+        categoryDTOList.sort(Comparator.comparing(CategoryDTO::getId));
         return categoryDTOList;
     }
 

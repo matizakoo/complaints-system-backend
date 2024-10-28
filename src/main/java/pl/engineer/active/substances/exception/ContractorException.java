@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.exception;
+package pl.engineer.active.substances.exception;
 
 public class ContractorException extends RuntimeException{
     public ContractorException(String message) {

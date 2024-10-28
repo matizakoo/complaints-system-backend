@@ -1,13 +1,12 @@
-package pl.tanielazienki.tanielazienki.service;
+package pl.engineer.active.substances.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import pl.tanielazienki.tanielazienki.dto.NoteDTO;
-import pl.tanielazienki.tanielazienki.entity.NoteEntity;
-import pl.tanielazienki.tanielazienki.mapper.NoteMapper;
-import pl.tanielazienki.tanielazienki.repository.NoteRepository;
+import pl.engineer.active.substances.dto.NoteDTO;
+import pl.engineer.active.substances.entity.NoteEntity;
+import pl.engineer.active.substances.mapper.NoteMapper;
+import pl.engineer.active.substances.repository.NoteRepository;
 
 @Service
 public class NoteServiceImpl implements NoteService {

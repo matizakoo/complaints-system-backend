@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.config;
+package pl.engineer.active.substances.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;

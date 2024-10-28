@@ -1,10 +1,9 @@
-package pl.tanielazienki.tanielazienki.entity;
+package pl.engineer.active.substances.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity

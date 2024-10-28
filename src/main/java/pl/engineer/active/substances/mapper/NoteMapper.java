@@ -1,8 +1,8 @@
-package pl.tanielazienki.tanielazienki.mapper;
+package pl.engineer.active.substances.mapper;
 
 import org.mapstruct.Mapper;
-import pl.tanielazienki.tanielazienki.dto.NoteDTO;
-import pl.tanielazienki.tanielazienki.entity.NoteEntity;
+import pl.engineer.active.substances.dto.NoteDTO;
+import pl.engineer.active.substances.entity.NoteEntity;
 
 @Mapper(
         componentModel = "spring",

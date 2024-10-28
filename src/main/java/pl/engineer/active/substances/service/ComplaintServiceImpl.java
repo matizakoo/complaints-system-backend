@@ -1,13 +1,12 @@
-package pl.tanielazienki.tanielazienki.service;
+package pl.engineer.active.substances.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import pl.tanielazienki.tanielazienki.dto.ComplaintDTO;
-import pl.tanielazienki.tanielazienki.entity.ComplaintEntity;
-import pl.tanielazienki.tanielazienki.mapper.ComplaintMapper;
-import pl.tanielazienki.tanielazienki.repository.ComplaintRepository;
+import pl.engineer.active.substances.entity.ComplaintEntity;
+import pl.engineer.active.substances.repository.ComplaintRepository;
+import pl.engineer.active.substances.dto.ComplaintDTO;
+import pl.engineer.active.substances.mapper.ComplaintMapper;
 
 import java.time.LocalDate;
 import java.util.HashMap;

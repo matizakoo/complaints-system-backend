@@ -1,21 +1,16 @@
-package pl.tanielazienki.tanielazienki.controller;
+package pl.engineer.active.substances.controller;
 
-import freemarker.core._ArrayEnumeration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.tanielazienki.tanielazienki.dto.ComplaintDTO;
-import pl.tanielazienki.tanielazienki.dto.NoteDTO;
-import pl.tanielazienki.tanielazienki.entity.ComplaintEntity;
-import pl.tanielazienki.tanielazienki.entity.NoteEntity;
-import pl.tanielazienki.tanielazienki.mapper.ComplaintMapper;
-import pl.tanielazienki.tanielazienki.service.ComplaintServiceImpl;
-import pl.tanielazienki.tanielazienki.service.EmailService;
-import pl.tanielazienki.tanielazienki.service.NoteServiceImpl;
+import pl.engineer.active.substances.dto.ComplaintDTO;
+import pl.engineer.active.substances.entity.ComplaintEntity;
+import pl.engineer.active.substances.service.ComplaintServiceImpl;
+import pl.engineer.active.substances.entity.NoteEntity;
+import pl.engineer.active.substances.service.NoteServiceImpl;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;

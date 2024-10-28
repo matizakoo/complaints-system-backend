@@ -1,16 +1,16 @@
-package pl.tanielazienki.tanielazienki.service;
+package pl.engineer.active.substances.service;
 
-import pl.tanielazienki.tanielazienki.dto.ComplaintDTO;
-import pl.tanielazienki.tanielazienki.entity.ContractorEntity;
+import pl.engineer.active.substances.dto.ContractorDTO;
+import pl.engineer.active.substances.entity.ContractorEntity;
 
 import java.util.List;
 
 public interface ContractorService {
     void remove(Integer id);
-    void update(pl.tanielazienki.tanielazienki.dto.ContractorDTO contractorDTO);
-    void save(pl.tanielazienki.tanielazienki.dto.ContractorDTO contractorDTO) ;
+    void update(ContractorDTO contractorDTO);
+    void save(ContractorDTO contractorDTO) ;
     void save(ContractorEntity CcntractorEntity) ;
     void create(String category);
-    List<pl.tanielazienki.tanielazienki.dto.ContractorDTO> getAll();
+    List<ContractorDTO> getAll();
     String commonContractor();
 }

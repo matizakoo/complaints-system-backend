@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.dto;
+package pl.engineer.active.substances.dto;
 
 import lombok.*;
 

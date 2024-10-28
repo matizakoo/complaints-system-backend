@@ -1,9 +1,10 @@
-package pl.tanielazienki.tanielazienki.mapper;
+package pl.engineer.active.substances.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import pl.tanielazienki.tanielazienki.entity.ProviderEntity;
+import pl.engineer.active.substances.dto.ProviderDTO;
+import pl.engineer.active.substances.entity.ProviderEntity;
 
 @Mapper(componentModel = "spring")
 public interface ProviderMapper {
@@ -11,10 +12,10 @@ public interface ProviderMapper {
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "nameOfProvider", target = "nameOfProvider")
     })
-    ProviderEntity mapProviderDTOToProviderEntity(pl.tanielazienki.tanielazienki.dto.ProviderDTO providerDTO);
+    ProviderEntity mapProviderDTOToProviderEntity(ProviderDTO providerDTO);
     @Mappings({
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "nameOfProvider", target = "nameOfProvider")
     })
-    pl.tanielazienki.tanielazienki.dto.ProviderDTO mapProviderEntityToProviderDTO(ProviderEntity providerEntity);
+    ProviderDTO mapProviderEntityToProviderDTO(ProviderEntity providerEntity);
 }

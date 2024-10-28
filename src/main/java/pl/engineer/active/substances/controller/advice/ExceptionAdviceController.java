@@ -1,16 +1,11 @@
-package pl.tanielazienki.tanielazienki.controller.advice;
+package pl.engineer.active.substances.controller.advice;
 
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
-import pl.tanielazienki.tanielazienki.controller.CategoryController;
-import pl.tanielazienki.tanielazienki.controller.advice.ResponseHelper;
-import pl.tanielazienki.tanielazienki.dto.InfoDTO;
-import pl.tanielazienki.tanielazienki.exception.CategoryException;
-import pl.tanielazienki.tanielazienki.exception.ContractorException;
+import pl.engineer.active.substances.dto.InfoDTO;
+import pl.engineer.active.substances.exception.CategoryException;
+import pl.engineer.active.substances.exception.ContractorException;
 
 @ControllerAdvice
 public class ExceptionAdviceController {

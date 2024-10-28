@@ -10,9 +10,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @EnableJpaRepositories("pl.engineer.active.substances.repository")
 @EntityScan("pl.engineer.active.substances.entity")
-public class TanielazienkiApplication {
+public class ActiveSubstances {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TanielazienkiApplication.class, args);
+		SpringApplication.run(ActiveSubstances.class, args);
 	}
 }

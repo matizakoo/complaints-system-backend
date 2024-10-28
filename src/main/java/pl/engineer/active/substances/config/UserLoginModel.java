@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.config;
+package pl.engineer.active.substances.config;
 
 import java.util.Objects;
 

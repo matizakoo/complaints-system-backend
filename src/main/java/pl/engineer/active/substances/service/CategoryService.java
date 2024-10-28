@@ -1,19 +1,20 @@
-package pl.tanielazienki.tanielazienki.service;
+package pl.engineer.active.substances.service;
 
-import pl.tanielazienki.tanielazienki.entity.CategoryEntity;
+import pl.engineer.active.substances.dto.CategoryDTO;
+import pl.engineer.active.substances.entity.CategoryEntity;
 
 import java.util.List;
 
 public interface CategoryService {
     void remove(Integer id);
 
-    void update(pl.tanielazienki.tanielazienki.dto.CategoryDTO categoryDTO);
+    void update(CategoryDTO categoryDTO);
 
-    void save(pl.tanielazienki.tanielazienki.dto.CategoryDTO categoryDTO) ;
+    void save(CategoryDTO categoryDTO) ;
     void save(CategoryEntity categoryEntity) ;
 
     void create(String category);
-    List<pl.tanielazienki.tanielazienki.dto.CategoryDTO> getAll();
+    List<CategoryDTO> getAll();
 
     CategoryEntity findByCategory(String category);
 }

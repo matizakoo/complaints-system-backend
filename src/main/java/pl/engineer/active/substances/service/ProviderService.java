@@ -1,19 +1,20 @@
-package pl.tanielazienki.tanielazienki.service;
+package pl.engineer.active.substances.service;
 
-import pl.tanielazienki.tanielazienki.entity.ProviderEntity;
+import pl.engineer.active.substances.dto.ProviderDTO;
+import pl.engineer.active.substances.entity.ProviderEntity;
 
 import java.util.List;
 
 public interface ProviderService {
     void remove(Integer id);
 
-    void update(pl.tanielazienki.tanielazienki.dto.ProviderDTO providerDTO);
+    void update(ProviderDTO providerDTO);
 
-    void save(pl.tanielazienki.tanielazienki.dto.ProviderDTO providerDTO) ;
+    void save(ProviderDTO providerDTO) ;
     void save(ProviderEntity provider) ;
 
     void create(String category);
-    List<pl.tanielazienki.tanielazienki.dto.ProviderDTO> getAll();
+    List<ProviderDTO> getAll();
 
     ProviderEntity findByNameOfProvider(String category);
     String commonProvider();

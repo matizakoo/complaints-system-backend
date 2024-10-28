@@ -1,11 +1,10 @@
-package pl.tanielazienki.tanielazienki.cron;
+package pl.engineer.active.substances.cron;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import pl.tanielazienki.tanielazienki.service.EmailService;
+import pl.engineer.active.substances.service.EmailService;
 
 import java.io.IOException;
 

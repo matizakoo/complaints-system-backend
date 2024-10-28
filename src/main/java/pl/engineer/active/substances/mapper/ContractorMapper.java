@@ -1,13 +1,14 @@
-package pl.tanielazienki.tanielazienki.mapper;
+package pl.engineer.active.substances.mapper;
 
 import org.mapstruct.Mapper;
-import pl.tanielazienki.tanielazienki.entity.ContractorEntity;
+import pl.engineer.active.substances.dto.ContractorDTO;
+import pl.engineer.active.substances.entity.ContractorEntity;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ContractorMapper {
-    ContractorEntity mapContractorDTOToContractorEntity(pl.tanielazienki.tanielazienki.dto.ContractorDTO contractorDTO);
-    pl.tanielazienki.tanielazienki.dto.ContractorDTO mapContractorEntityToContractorDTO(ContractorEntity contractorEntity);
-    List<pl.tanielazienki.tanielazienki.dto.ContractorDTO> mapContractorEntityToContractorDTOList(List<ContractorEntity> contractorEntity);
+    ContractorEntity mapContractorDTOToContractorEntity(ContractorDTO contractorDTO);
+    ContractorDTO mapContractorEntityToContractorDTO(ContractorEntity contractorEntity);
+    List<ContractorDTO> mapContractorEntityToContractorDTOList(List<ContractorEntity> contractorEntity);
 }

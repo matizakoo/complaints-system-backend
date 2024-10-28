@@ -1,10 +1,10 @@
-package pl.tanielazienki.tanielazienki.dto;
+package pl.engineer.active.substances.dto;
 
 import lombok.*;
-import pl.tanielazienki.tanielazienki.entity.CategoryEntity;
-import pl.tanielazienki.tanielazienki.entity.ContractorEntity;
-import pl.tanielazienki.tanielazienki.entity.NoteEntity;
-import pl.tanielazienki.tanielazienki.entity.ProviderEntity;
+import pl.engineer.active.substances.entity.CategoryEntity;
+import pl.engineer.active.substances.entity.ContractorEntity;
+import pl.engineer.active.substances.entity.NoteEntity;
+import pl.engineer.active.substances.entity.ProviderEntity;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -1,11 +1,9 @@
-package pl.tanielazienki.tanielazienki.controller;
+package pl.engineer.active.substances.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.tanielazienki.tanielazienki.dto.ComplaintDTO;
+import pl.engineer.active.substances.dto.ComplaintDTO;
 
 import java.util.List;
 

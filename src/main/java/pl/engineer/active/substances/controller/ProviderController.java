@@ -1,10 +1,9 @@
-package pl.tanielazienki.tanielazienki.controller;
+package pl.engineer.active.substances.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.tanielazienki.tanielazienki.dto.CategoryDTO;
-import pl.tanielazienki.tanielazienki.dto.ProviderDTO;
+import pl.engineer.active.substances.dto.ProviderDTO;
 
 import java.util.List;
 

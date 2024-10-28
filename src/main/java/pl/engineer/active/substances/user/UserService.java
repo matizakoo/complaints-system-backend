@@ -1,10 +1,10 @@
-package pl.tanielazienki.tanielazienki.user;
+package pl.engineer.active.substances.user;
 
 import jakarta.transaction.Transactional;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import pl.tanielazienki.tanielazienki.entity.UserEntity;
-import pl.tanielazienki.tanielazienki.repository.UserRepository;
+import pl.engineer.active.substances.entity.UserEntity;
+import pl.engineer.active.substances.repository.UserRepository;
 
 @Service
 public class UserService {

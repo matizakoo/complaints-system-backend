@@ -1,16 +1,13 @@
-package pl.tanielazienki.tanielazienki.controller;
+package pl.engineer.active.substances.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-import pl.tanielazienki.tanielazienki.dto.CategoryDTO;
-import pl.tanielazienki.tanielazienki.dto.ContractorDTO;
-import pl.tanielazienki.tanielazienki.service.ContractorServiceImpl;
+import pl.engineer.active.substances.dto.ContractorDTO;
+import pl.engineer.active.substances.service.ContractorServiceImpl;
 
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 @RestController

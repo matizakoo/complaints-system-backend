@@ -1,8 +1,8 @@
-package pl.tanielazienki.tanielazienki.repository;
+package pl.engineer.active.substances.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.tanielazienki.tanielazienki.entity.CategoryEntity;
+import pl.engineer.active.substances.entity.CategoryEntity;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<CategoryEntity, Integer> {

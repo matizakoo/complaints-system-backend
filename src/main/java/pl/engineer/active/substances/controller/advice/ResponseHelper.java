@@ -1,8 +1,8 @@
-package pl.tanielazienki.tanielazienki.controller.advice;
+package pl.engineer.active.substances.controller.advice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import pl.tanielazienki.tanielazienki.dto.InfoDTO;
+import pl.engineer.active.substances.dto.InfoDTO;
 
 public class ResponseHelper {
     public static ResponseEntity<InfoDTO> response400(String e){

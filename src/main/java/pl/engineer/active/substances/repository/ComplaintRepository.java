@@ -1,8 +1,8 @@
-package pl.tanielazienki.tanielazienki.repository;
+package pl.engineer.active.substances.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import pl.tanielazienki.tanielazienki.entity.ComplaintEntity;
+import pl.engineer.active.substances.entity.ComplaintEntity;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,9 +1,8 @@
-package pl.tanielazienki.tanielazienki.mapper;
+package pl.engineer.active.substances.mapper;
 
-import jdk.jfr.Category;
 import org.mapstruct.Mapper;
-import pl.tanielazienki.tanielazienki.dto.CategoryDTO;
-import pl.tanielazienki.tanielazienki.entity.CategoryEntity;
+import pl.engineer.active.substances.dto.CategoryDTO;
+import pl.engineer.active.substances.entity.CategoryEntity;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {

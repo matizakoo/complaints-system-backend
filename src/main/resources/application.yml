@@ -14,13 +14,14 @@ spring:
     properties:
       hibernate:
         format_sql: true
-flyway:
-  locations: classpath:db/migration
-
-logging:
-  level:
-    org:
-      flywaydb=DEBUG:
+#flyway:
+#  locations: classpath:db/migration
+server:
+  port: 8080
+#logging:
+#  level:
+#    org:
+#      flywaydb=DEBUG:
 
 #  mail:
 #    host: localhost

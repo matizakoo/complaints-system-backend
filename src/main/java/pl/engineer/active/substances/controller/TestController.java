@@ -1,12 +1,12 @@
-package pl.tanielazienki.tanielazienki.controller;
+package pl.engineer.active.substances.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import pl.tanielazienki.tanielazienki.user.UserRegistrationDTO;
-import pl.tanielazienki.tanielazienki.user.UserService;
+import pl.engineer.active.substances.user.UserRegistrationDTO;
+import pl.engineer.active.substances.user.UserService;
 
 
 @CrossOrigin("*")

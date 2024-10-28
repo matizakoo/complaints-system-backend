@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.user;
+package pl.engineer.active.substances.user;
 
 import java.util.Objects;
 

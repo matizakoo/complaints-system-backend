@@ -1,4 +1,4 @@
-package pl.tanielazienki.tanielazienki.config;
+package pl.engineer.active.substances.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -12,7 +12,6 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.time.Instant;
-import java.time.LocalDate;
 import java.util.*;
 
 import org.springframework.context.annotation.Configuration;

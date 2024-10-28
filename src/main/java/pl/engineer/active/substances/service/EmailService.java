@@ -1,11 +1,10 @@
-package pl.tanielazienki.tanielazienki.service;
+package pl.engineer.active.substances.service;
 
 import okhttp3.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import pl.tanielazienki.tanielazienki.controller.ComplaintControllerImpl;
-import pl.tanielazienki.tanielazienki.dto.ComplaintDTO;
+import pl.engineer.active.substances.dto.ComplaintDTO;
 
 import java.io.IOException;
 import java.util.List;
