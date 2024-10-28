@@ -1,14 +1,15 @@
-package pl.tanielazienki.tanielazienki;
+package pl.engineer.active.substances;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
 @SpringBootApplication
-@EnableJpaRepositories("pl.tanielazienki.tanielazienki.repository")
-@EntityScan("pl.tanielazienki.tanielazienki.entity")
+@EnableScheduling
+@EnableJpaRepositories("pl.engineer.active.substances.repository")
+@EntityScan("pl.engineer.active.substances.entity")
 public class TanielazienkiApplication {
 
 	public static void main(String[] args) {

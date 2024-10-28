@@ -109,13 +109,4 @@ public class ComplaintControllerImpl implements ComplaintController{
     public ResponseEntity<?> getExpiresInTwoDays() {
         return ResponseEntity.ok(complaintService.complaintsExpiresInTwoDays());
     }
-
-    @Autowired
-    private EmailService emailService;
-
-    @GetMapping("/send")
-    public void send() throws IOException {
-        System.out.println("xxx");
-        emailService.sendSimpleEmail("matzakoo@gmail.com", "zgloszenia", "hihih");
-    }
 }
